@@ -1,14 +1,22 @@
-import './index.css'
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import Headers from "./components/Headers";
+import MainContainer from "./components/MainContainer";
+import AddFavsContainer from "./components/AddFavsContainer";
+// import { AddFavsContainer, Headers, MainContainer } from "./components";
+
 
 function App() {
-  
-
   return (
-<>
-  <h1 className="text-4xl text-center text-white">Noor Alam</h1>
-</>
-      
-  )
+    <>
+      <Headers />
+
+      <Routes>
+        <Route path="/*" element={<MainContainer />} />
+        <Route path="/addFavs" element={<AddFavsContainer />} />
+      </Routes>
+    </>
+  );
 }
 
-export default App
+export default App;
